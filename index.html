@@ -1,18 +1,16 @@
-
-<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
-		<link rel="stylesheet" href="css/L.Control.Locate.min.css">
+	<link rel="stylesheet" href="css/L.Control.Locate.min.css">
         <link rel="stylesheet" href="css/qgis2web.css">
-		<link rel="stylesheet" href="css/fontawesome-all.min.css">
-       <link rel="stylesheet" type="text/css" href="style.css">
-	   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	<link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 	   
 		
         <style>
@@ -24,11 +22,11 @@
         }
         </style>
 
-        <title></title>
+        <title>October Crisis Map Index</title>
     </head>
 	<header>
 		<div class="logo">
-			<img src="https://library.mcmaster.ca/maps/aerialphotos/mcm-library_left-col.png" alt="McMaster University Library logo" />
+		<img src="https://library.mcmaster.ca/maps/aerialphotos/mcm-library_left-col.png" alt="McMaster University Library logo" />
 		</div>
 		<div id="buttonzone" style="right:1vw">
 		<a href="https://digitalarchive.mcmaster.ca/islandora/object/macrepo%3A82248" style="text-decoration:none; margin-left: 0.8vw" target="_blank"><button class="button">Digital Archive</button></a>
@@ -41,12 +39,11 @@
 
 	</header>
     <body>
-        <div id="map" style="width: 100vw; height: 94vh; font-size: 12px;"></div>
-        
+        <div id="map" style="width: 100vw; height: 94vh; font-size: 12px;"></div>        
         <link rel="stylesheet" href="css/API.css">
-		<script src="js/qgis2web_expressions.js"></script>
+	<script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
-		<script src="js/multi-style-layer.js"></script>
+	<script src="js/multi-style-layer.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -54,14 +51,14 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-		<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+	<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
         <script src="data/oct_crisis_map_sheet_bounds_1.js"></script>
-		<script src="js/simple-slider.js"></script>
-		<link href="https://loopj.github.io/jquery-simple-slider/css/simple-slider.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="https://eclipse1979.github.io/leaflet.slider/dist/leaflet-slider.css">
-		<script src="https://eclipse1979.github.io/leaflet.slider/dist/leaflet-slider.js"></script> 
-		<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+	<script src="js/simple-slider.js"></script>
+	<link href="https://loopj.github.io/jquery-simple-slider/css/simple-slider.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://eclipse1979.github.io/leaflet.slider/dist/leaflet-slider.css">
+	<script src="https://eclipse1979.github.io/leaflet.slider/dist/leaflet-slider.js"></script> 
+	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
         <script>
 
 var bounds_group = new L.featureGroup([]);
@@ -159,9 +156,9 @@ map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qg
         });
         bounds_group.addLayer(layer_oct_crisis_map_sheet_bounds_1);
         map.addLayer(layer_oct_crisis_map_sheet_bounds_1);
-		map.addLayer(lyr);
+	map.addLayer(lyr);
 		
-		L.control.layers(baseMaps,{'Map Sheets': lyr,'Index': layer_oct_crisis_map_sheet_bounds_1,},{collapsed:false}).addTo(map);
+	L.control.layers(baseMaps,{'Map Sheets': lyr,'Index': layer_oct_crisis_map_sheet_bounds_1,},{collapsed:false}).addTo(map);
         slider = L.control.slider(function(value){lyr.setOpacity(value);},{position: "topright",max: 1,value: 1,step:0.05,size: "175px",collapsed: false,id: "slider"}).addTo(map);
         map.addControl(new L.Control.Fullscreen());
         setBounds();
