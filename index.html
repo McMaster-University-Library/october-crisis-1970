@@ -74,15 +74,11 @@ var osm = L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.
 	attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 	maxZoom: 28});
 
-var grayscale = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
-	attribution: '&copy;Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
-	maxZoom: 28});
-
 var lyr = L.tileLayer('https://library.mcmaster.ca/tiles/oct_crisis_1970/{z}/{x}/{y}.png', {tms: true, opacity: 1.0, attribution: ""});
 
-var map = L.map('map', {center:[46.529, -71.658], layers:[grayscale], zoom: 7, maxZoom:16, minZoom:6});
+var map = L.map('map', {center:[46.529, -71.658], layers:[osm], zoom: 7, maxZoom:16, minZoom:6});
 
-var baseMaps = {"OpenStreetMap": osm,"Grayscale": grayscale}; 
+var baseMaps = {"OpenStreetMap": osm}; 
 
 var overlaymaps = {"Layer": lyr}
 
